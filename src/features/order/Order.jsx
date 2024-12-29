@@ -1,6 +1,6 @@
 // Test ID: IIDSAT
 
-import { useLoaderData } from "react-router";
+import { useActionData, useLoaderData } from "react-router";
 import { getOrder } from "../../services/apiRestaurant";
 import { calcMinutesLeft, formatCurrency, formatDate } from "../../utils/helpers";
 
@@ -35,7 +35,7 @@ function Order() {
   );
 }
 
-export function OrderLoader({ params }) {
+export function orderLoader({ params }) {
   const orderDetail = getOrder(params.orderId);
   return orderDetail;
 }
